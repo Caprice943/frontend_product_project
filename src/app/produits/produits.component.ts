@@ -10,13 +10,27 @@ import { ProduitService } from '../services/produit.service';
 export class ProduitsComponent implements OnInit {
   produits: Produit[] | undefined; //un tableau de Produit
   constructor(private produitService: ProduitService) {}
+
   ngOnInit(): void {
-    this.produits = this.produitService.listeProduits();
+    this.produitService.listeProduit().subscribe((prods) => {
+      console.log(prods);
+      this.produits = prods;
+    });
   }
 
-  supprimerProduit(prod: Produit) {
-    //console.log(prod);
+  chargerProduits() {
+    this.produitService.listeProduit().subscribe((prods) => {
+      console.log(prods);
+      this.produits = prods;
+    });
+  }
+
+  supprimerProduit(p: Produit) {
     let conf = confirm('Etes-vous sûr ?');
-    if (conf) this.produitService.supprimerProduit(prod);
+    if (conf)
+      this.produitService.supprimerProduit(p.idProduit).subscribe(() => {
+        console.log('produit supprimé');
+        this.chargerProduits();
+      });
   }
 }
