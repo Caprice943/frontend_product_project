@@ -11,17 +11,41 @@
       <!-- Links -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/produits">Home</a>
+          <a class="nav-link active" routerLink="/produits">Home</a>
         </li>
 
         <!-- Dropdown -->
         <li class="nav-item dropdown">
           <a
-            class="nav-link"
-            href="/addProduit"
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbardrop"
+            data-toggle="dropdown"
           >
-            Add Product
+            Products
           </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/addProduit">Add product</a>
+            <a class="dropdown-item" routerLink="/searchProduit"
+              >Search product</a
+            >
+          </div>
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbardrop"
+            data-toggle="dropdown"
+          >
+            Category
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="">Add category</a>
+            <a class="dropdown-item" routerLink="">Update category</a>
+          </div>
         </li>
       </ul>
 
@@ -43,11 +67,11 @@
         </li>
       </ul>
     </nav>
-    <br/>
-    <br/>
-    <app-search-by-produit *ngIf="shouldDisplaySearch"></app-search-by-produit>
+    <br />
 
-    <br/>
+    <h4 *ngIf="shouldDisplaySearch">Liste de tous les produits</h4>
+    <!--<app-search-by-produit *ngIf="shouldDisplaySearch"></app-search-by-produit>-->
+    <br />
   </body>
 </html>
 <router-outlet></router-outlet>
