@@ -1,8 +1,42 @@
-
 <div class="container">
-    <h4>Recherche par nom ou catégorie</h4>
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="dell, imprimante" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search 🔎</button>
-    </form>
+  <h4>Recherche par nom ou catégorie</h4>
+  <form class="form-inline my-2 my-lg-0">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="dell, imprimante"
+      aria-label="Search"
+      [(ngModel)]="productSearched"
+      name="produitCherche"
+    />
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchProduit()" type="submit">
+      Search 🔎
+    </button>
+  </form>
+  <br />
+  <br />
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th hidden>Id</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Date Création</th>
+            <th>Catégorie</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let produit of produits">
+          <tr>
+            <td hidden>{{ produit.idProduit }}</td>
+            <td>{{ produit.nomProduit }}</td>
+            <td>{{ produit.prixProduit }}</td>
+            <td>{{ produit.dateCreation | date : "dd/MM/yyyy" }}</td>
+            <td>{{ produit.categorie.nomCat }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class AddProduitComponent implements OnInit {
   newProduit = new Produit();
-  message: string | undefined;
   categories!: Categorie[];
   newIdCat!: number;
   newCategorie!: Categorie;

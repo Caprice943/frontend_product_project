@@ -53,6 +53,11 @@ export class ProduitService {
     return this.http.get<Categorie[]>(this.catUrl + '/all');
   }
 
+  searchProduitByNameOrCat(searchItem : String): Observable<Produit[]>{
+    return this.http.get<Produit[]>(this.apiUrl + `/searchProd/${searchItem}`);
+
+  }
+
   /*
   listeCategories():Categorie[] {
     return this.categories;
