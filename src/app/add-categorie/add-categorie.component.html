@@ -1,0 +1,61 @@
+<div class="container">
+  <form class="form-inline my-2 my-lg-0">
+    <input
+      class="form-control mr-sm-2"
+      type="text"
+      placeholder="nouvelle categorie"
+      aria-label="add"
+      [(ngModel)]="newCategory"
+      name="newCategorie"
+    />
+    <input
+      class="form-control mr-sm-2"
+      type="text"
+      placeholder="description categorie"
+      aria-label="add"
+      [(ngModel)]="newCategory"
+      name="newCategorie"
+    />
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      (click)="addCategory()"
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+  <br />
+  <br />
+
+  <h4>Catégories existantes</h4>
+  <br />
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th hidden>Id</th>
+            <th>Nom Catégorie</th>
+            <th>Description Catégorie</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let cat of categories">
+          <tr>
+            <td hidden>{{ cat.idCat }}</td>
+            <td>{{ cat.nomCat }}</td>
+            <td>{{ cat.descriptionCat }}</td>
+
+            <td>
+              <a
+                class="btn btn-outline-success"
+                [routerLink]="['/updateCategory']"
+                >Update</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
