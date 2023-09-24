@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateProduitComponent } from './update-produit/update-produit.component';
 import { ProduitService } from './services/produit.service';
 import { SearchByProduitComponent } from './search-by-produit/search-by-produit.component';
+import { AddCategorieComponent } from './add-categorie/add-categorie.component';
+import { UpdateCategoryComponent } from './update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { SearchByProduitComponent } from './search-by-produit/search-by-produit.
     AddProduitComponent,
     UpdateProduitComponent,
     SearchByProduitComponent,
+    AddCategorieComponent,
+    UpdateCategoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [ProduitService],

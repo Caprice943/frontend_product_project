@@ -7,6 +7,7 @@ import { Categorie } from '../model/categorie.model';
 @Component({
   selector: 'app-update-produit',
   templateUrl: './update-produit.component.html',
+  styleUrls: ['./update-produit.component.css']
 })
 export class UpdateProduitComponent implements OnInit {
   currentProduit = new Produit();

@@ -4,3 +4,44 @@ h4 {
     text-shadow: 2px 4px 3px rgba(35, 22, 210, 0.3);
     
 }
+
+/* Styles for the navbar */
+.navbar {
+    background: linear-gradient(to bottom, #211b93, #346fbd); /* Dégradé de bleu */
+  }
+  
+  /* Style pour les liens du menu */
+  .navbar-nav .nav-item {
+    position: relative; /* Position relative pour les liens */
+  }
+  
+  /* Style pour le contour des liens */
+  .navbar-nav .nav-item a.nav-link {
+    border: 2px solid transparent; /* Contour initial transparent */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 15px; /* Espacement interne */
+  }
+  
+  /* Style pour le contour lorsqu'on clique */
+  .navbar-nav .nav-item a.nav-link:focus,
+  .navbar-nav .nav-item a.nav-link:hover {
+    border-color: #fefefe; /* Couleur du contour lorsqu'on survole ou clique */
+    transition: border-color 0.3s; /* Transition en douceur */
+  }
+  
+  /* Style pour les liens dans le menu déroulant */
+  .dropdown-menu a.dropdown-item {
+    border: none; /* Supprimez le contour par défaut */
+    background-color: #f8f9fa; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne */
+  }
+  
+  /* Style pour les liens dans le menu déroulant lorsqu'on clique */
+  .dropdown-menu a.dropdown-item:focus,
+  .dropdown-menu a.dropdown-item:hover {
+    background-color: #4b86c5; /* Couleur de fond lorsqu'on survole ou clique */
+    color: #fff; /* Couleur du texte */
+    transition: background-color 0.3s, color 0.3s; /* Transition en douceur */
+  }
+  

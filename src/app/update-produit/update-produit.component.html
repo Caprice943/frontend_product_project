@@ -1,12 +1,10 @@
 <div class="container">
-  <div>
-    <h2>Modifier un Produit :</h2>
-  </div>
+  <h4>Modification d'un produit</h4>
   <form>
     <div class="col-sm-2 col-md-2 col-lg-2">
-      <label>ID Produit</label>
+      <label hidden>ID Produit</label>
       <input
-        readonly
+        hidden
         type="text"
         [(ngModel)]="currentProduit.idProduit"
         name="idProduit"
@@ -22,6 +20,7 @@
         class="form-control"
       />
     </div>
+    <br />
 
     <div class="col-sm-2 col-md-2 col-lg-2">
       <label>Prix Produit</label>
@@ -32,6 +31,7 @@
         class="form-control"
       />
     </div>
+    <br />
 
     <div class="col-sm-4 col-md-4 col-lg-4">
       <label>Date création</label>
@@ -43,9 +43,10 @@
         class="form-control"
       />
     </div>
+    <br />
 
     <div class="col-sm-4 col-md-4 col-lg-4">
-        <label>Catégorie</label>
+      <label>Catégorie</label>
       <select
         class="form-control form-control-lg"
         id="idCat"
@@ -57,8 +58,14 @@
         </option>
       </select>
     </div>
-    <div class="mt-2">
-      <button type="submit" (click)="updateProduit()" class="btn btn-outline-success">
+    <br />
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <button
+        type="submit"
+        (click)="updateProduit()"
+        class="btn btn-outline-success"
+      >
         Update
       </button>
     </div>
