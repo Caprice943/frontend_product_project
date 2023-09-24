@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <h2>Ajouter un Produit :</h2>
+    <h4>Formulaire d'ajout de produit</h4>
   </div>
 
   <form>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-sm-4 col-md-4 col-lg-4">
-      <label>Nom Produit</label>
+      <label>Nom du produit</label>
       <input
         type="text"
         [(ngModel)]="newProduit.nomProduit"
@@ -25,7 +25,7 @@
     </div>
 
     <div class="col-sm-2 col-md-2 col-lg-2">
-      <label>Prix Produit</label>
+      <label>Prix du produit</label>
       <input
         type="number"
         [(ngModel)]="newProduit.prixProduit"
@@ -35,7 +35,7 @@
     </div>
 
     <div class="col-sm-4 col-md-4 col-lg-4">
-      <label>Date création</label>
+      <label>Date de création</label>
       <input
         type="date"
         [(ngModel)]="newProduit.dateCreation"
@@ -45,7 +45,7 @@
     </div>
 
     <div class="col-sm-4 col-md-4 col-lg-4">
-      <label>Categorie</label>
+      <label>Catégorie</label>
       <select
         class="form-control form-control-lg"
         id="idCat"
@@ -59,13 +59,9 @@
     </div>
 
     <div class="mt-2">
-      <button type="submit" (click)="addProduit()" class="btn btn-success">
-        Ajouter
+      <button type="submit" (click)="addProduit()" class="btn btn-outline-success">
+        Add
       </button>
-
-      <div>
-        <p>{{ message }}</p>
-      </div>
     </div>
   </form>
 </div>
