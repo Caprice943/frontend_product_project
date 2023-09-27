@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Produit } from '../model/produit.model';
 import { ProduitService } from '../services/produit.service';
 import { Categorie } from '../model/categorie.model';
+import { CategorieService } from '../services/categorie.service';
 
 @Component({
   selector: 'app-update-produit',
@@ -17,11 +18,12 @@ export class UpdateProduitComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private produitService: ProduitService
+    private produitService: ProduitService,
+    private categorieService: CategorieService
   ) {}
 
   ngOnInit(): void {
-    this.produitService.listeCategories().subscribe((cats) => {
+    this.categorieService.listeCategories().subscribe((cats) => {
       this.categories = cats;
       console.log(cats);
     });
