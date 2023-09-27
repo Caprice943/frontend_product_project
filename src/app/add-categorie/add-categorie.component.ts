@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Categorie } from '../model/categorie.model';
 import { ProduitService } from '../services/produit.service';
+import { Router } from '@angular/router';
+import { CategorieService } from '../services/categorie.service';
 
 @Component({
   selector: 'app-add-categorie',
@@ -9,18 +11,26 @@ import { ProduitService } from '../services/produit.service';
 })
 export class AddCategorieComponent implements OnInit {
   categories!: Categorie[];
-  newCategory!: Categorie;
+  newCategory = new Categorie();
 
-  constructor(private produitService: ProduitService) {}
+  constructor(
+    private categorieService: CategorieService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.produitService.listeCategories().subscribe((cats) => {
+    this.categorieService.listeCategories().subscribe((cats) => {
       this.categories = cats;
       console.log(cats);
     });
   }
 
   addCategory() {
-
+    this.categorieService
+      .ajouterCategorie(this.newCategory)
+      .subscribe((cat) => {
+        console.log(cat);
+        this.router.navigate(['addCategory']);
+      });
   }
 }
