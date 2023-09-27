@@ -14,10 +14,7 @@ const httpOptions = {
 })
 export class ProduitService {
   private apiUrl = environment.apiURL + '/produits';
-  private catUrl = environment.apiURL + '/cat';
-
   produits!: Produit[];
-  //categories : Categorie[];
 
   constructor(private http: HttpClient) {}
 
@@ -49,20 +46,11 @@ export class ProduitService {
     );
   }
 
-  listeCategories():Observable<Categorie[]>{
-    return this.http.get<Categorie[]>(this.catUrl + '/all');
-  }
-
-  searchProduitByNameOrCat(searchItem : String): Observable<Produit[]>{
+  searchProduitByNameOrCat(searchItem: String): Observable<Produit[]> {
     return this.http.get<Produit[]>(this.apiUrl + `/searchProd/${searchItem}`);
-
   }
 
   /*
-  listeCategories():Categorie[] {
-    return this.categories;
-  }
-
   consulterCategorie(id:number): Categorie{
     return this.categories.find(cat => cat.idCat == id)!;
   }*/
