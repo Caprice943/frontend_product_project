@@ -17,12 +17,24 @@ export class UpdateCategoryComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private produitService: ProduitService,
     private categorieService: CategorieService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.categorieService
+      .consulterCategorie(this.activatedRoute.snapshot.params['id'])
+      .subscribe((cat) => {
+        this.currentCategory = cat;
+        this.updateIdCat = this.currentCategory.idCat;
+      });
+  }
+
   updateCategory() {
-    //
+    this.currentCategory.idCat = this.updateIdCat;
+    this.categorieService
+      .updateCategorie(this.currentCategory)
+      .subscribe((cat) => {
+        this.router.navigate(['addCategory']);
+      });
   }
 }

@@ -27,4 +27,16 @@ export class CategorieService {
       httpOptions
     );
   }
+
+  consulterCategorie(id: number): Observable<Categorie> {
+    return this.http.get<Categorie>(this.catUrl  + `/${id}`, httpOptions);
+  }
+
+  updateCategorie(cat: Categorie): Observable<Categorie> {
+    return this.http.put<Categorie>(
+      this.catUrl + '/updateCategory',
+      cat,
+      httpOptions
+    );
+  }
 }
