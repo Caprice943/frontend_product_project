@@ -6,15 +6,17 @@ import { UpdateProduitComponent } from './update-produit/update-produit.componen
 import { SearchByProduitComponent } from './search-by-produit/search-by-produit.component';
 import { AddCategorieComponent } from './add-categorie/add-categorie.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
+import { ListCategorieComponent } from './list-categorie/list-categorie.component';
 
 const routes: Routes = [
   { path: 'produits', component: ProduitsComponent },
   { path: 'addProduit', component: AddProduitComponent },
   { path: '', redirectTo: 'produits', pathMatch: 'full' },
   { path: 'updateProduit/:id', component: UpdateProduitComponent },
-  { path: 'searchProduit', component : SearchByProduitComponent},
-  { path: 'addCategory', component: AddCategorieComponent},
-  { path: 'updateCategory/:id', component: UpdateCategoryComponent}
+  { path: 'searchProduit', component: SearchByProduitComponent },
+  { path: 'addCategory', component: AddCategorieComponent },
+  { path: 'updateCategory/:id', component: UpdateCategoryComponent },
+  { path: 'listCategory', component: ListCategorieComponent },
 ];
 
 @NgModule({

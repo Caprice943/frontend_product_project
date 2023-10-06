@@ -12,6 +12,7 @@ import { ProduitService } from './services/produit.service';
 import { SearchByProduitComponent } from './search-by-produit/search-by-produit.component';
 import { AddCategorieComponent } from './add-categorie/add-categorie.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
+import { ListCategorieComponent } from './list-categorie/list-categorie.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UpdateCategoryComponent } from './update-category/update-category.compo
     SearchByProduitComponent,
     AddCategorieComponent,
     UpdateCategoryComponent,
+    ListCategorieComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [ProduitService],

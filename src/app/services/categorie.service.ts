@@ -39,4 +39,8 @@ export class CategorieService {
       httpOptions
     );
   }
+
+  supprimerCategorie(id : number){
+    return this.http.delete<Categorie>( this.catUrl + '/deleteCategorie' + `/${id}`);
+  }
 }
