@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Categorie } from '../model/categorie.model';
 import { CategorieService } from '../services/categorie.service';
 import { Router } from '@angular/router';
@@ -33,7 +33,7 @@ export class ListCategorieComponent implements OnInit {
       this.categorieService
         .supprimerCategorie(categorie.idCat)
         .subscribe(() => {
-          console.log('Categorie supprimer');
+          console.log('Categorie supprimée');
           this.chargerCategorie();
         });
   }

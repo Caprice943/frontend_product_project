@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Categorie } from '../model/categorie.model';
-import { ProduitService } from '../services/produit.service';
 import { Router } from '@angular/router';
 import { CategorieService } from '../services/categorie.service';
 
@@ -13,12 +12,17 @@ export class AddCategorieComponent implements OnInit {
   categories!: Categorie[];
   newCategory = new Categorie();
 
+
   constructor(
     private categorieService: CategorieService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.chargerCategorie();
+  }
+
+  chargerCategorie() {
     this.categorieService.listeCategories().subscribe((cats) => {
       this.categories = cats;
       console.log(cats);
@@ -29,8 +33,11 @@ export class AddCategorieComponent implements OnInit {
     this.categorieService
       .ajouterCategorie(this.newCategory)
       .subscribe((cat) => {
-        console.log(cat);
-        this.router.navigate(['addCategory']);
+        this.newCategory.nomCat = '';
+        this.newCategory.descriptionCat = '';
+      
+        // Mettez à jour la liste des catégories dans ListCategorieComponent
+        this.chargerCategorie();
       });
   }
 }

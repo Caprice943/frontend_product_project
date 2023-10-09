@@ -11,15 +11,15 @@
             <td>{{ produit.dateCreation | date: "dd/MM/yyyy" }}</td>
             <td>{{produit.categorie.nomCat}}</td>
             <td>
-              <a class="btn btn-outline-danger" (click)="supprimerProduit(produit)"
-                >Delete 🚮</a
-              >
-            </td>
-            <td>
               <a
                 class="btn btn-outline-success"
                 [routerLink]="['/updateProduit', produit.idProduit]"
-                >Update 🔄</a
+                >Modifier 🔄</a
+              >
+            </td>
+            <td>
+              <a class="btn btn-outline-danger" (click)="supprimerProduit(produit)"
+                >Supprimer 🗑️</a
               >
             </td>
           </tr>

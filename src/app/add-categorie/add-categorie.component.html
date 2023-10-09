@@ -16,6 +16,7 @@
     />
     <button
       class="btn btn-outline-success my-2 my-sm-0"
+      [disabled]="!newCategory.nomCat"
       (click)="addCategory()"
       type="submit"
     >
@@ -26,7 +27,4 @@
   <br />
 
   <app-list-categorie></app-list-categorie>
-
-
-
 </div>

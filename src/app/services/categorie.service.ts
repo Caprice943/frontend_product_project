@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Categorie } from '../model/categorie.model';
 
@@ -13,18 +13,29 @@ const httpOptions = {
 })
 export class CategorieService {
   private catUrl = environment.apiURL + '/cat';
+  private categoriesSubject = new BehaviorSubject<Categorie[]>([]);
 
   constructor(private http: HttpClient) {}
 
   listeCategories(): Observable<Categorie[]> {
-    return this.http.get<Categorie[]>(this.catUrl + '/all');
+    this.http.get<Categorie[]>(this.catUrl + '/all').subscribe((cats) => {
+      this.categoriesSubject.next(cats);
+    });
+    return this.categoriesSubject.asObservable();
   }
 
+  
   ajouterCategorie(cat: Categorie): Observable<Categorie> {
     return this.http.post<Categorie>(
       this.catUrl + '/createCategorie',
       cat,
       httpOptions
+    ).pipe(
+      tap(() => {
+        const currentCategories = this.categoriesSubject.value;
+        currentCategories.push(cat);
+        this.categoriesSubject.next(currentCategories);
+      })
     );
   }
 
