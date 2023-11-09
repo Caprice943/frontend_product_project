@@ -1,0 +1,10 @@
+body, footer {
+    background: linear-gradient(to bottom, #211b93, #346fbd); /* Dégradé de bleu */
+}
+
+.copyright{
+    text-align: center;
+    padding: 1rem !important;
+    color: white;
+    background-color: linear-gradient(to bottom, #4943c1, #3f6ca6)
+}

@@ -5,6 +5,10 @@ h4 {
     
 }
 
+.img-fluid .rounded-circle{
+  width: 50px;
+}
+
 /* Styles for the navbar */
 .navbar {
     background: linear-gradient(to bottom, #211b93, #346fbd); /* Dégradé de bleu */
