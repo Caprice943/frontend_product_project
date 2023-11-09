@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +14,8 @@ import { AddCategorieComponent } from './add-categorie/add-categorie.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import { ListCategorieComponent } from './list-categorie/list-categorie.component';
 import { HomeComponent } from './home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterAppComponent } from './footer-app/footer-app.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,9 @@ import { HomeComponent } from './home/home.component';
     UpdateCategoryComponent,
     ListCategorieComponent,
     HomeComponent,
+    FooterAppComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, FontAwesomeModule],
   providers: [ProduitService],
   bootstrap: [AppComponent],
 })
