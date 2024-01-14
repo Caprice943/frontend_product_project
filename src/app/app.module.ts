@@ -16,6 +16,8 @@ import { ListCategorieComponent } from './list-categorie/list-categorie.componen
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterAppComponent } from './footer-app/footer-app.component';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
+import { FormContactComponent } from './form-contact/form-contact.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FooterAppComponent } from './footer-app/footer-app.component';
     ListCategorieComponent,
     HomeComponent,
     FooterAppComponent,
+    MentionsLegalesComponent,
+    FormContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, FontAwesomeModule],
   providers: [ProduitService],

@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class ProduitService {
-  private apiUrl = environment.apiURL + '/produits';
+  private apiUrl = environment.apiURL + '/prod';
   produits!: Produit[];
 
   constructor(private http: HttpClient) {}
