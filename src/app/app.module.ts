@@ -13,6 +13,11 @@ import { SearchByProduitComponent } from './search-by-produit/search-by-produit.
 import { AddCategorieComponent } from './add-categorie/add-categorie.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import { ListCategorieComponent } from './list-categorie/list-categorie.component';
+import { HomeComponent } from './home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterAppComponent } from './footer-app/footer-app.component';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
+import { FormContactComponent } from './form-contact/form-contact.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +29,12 @@ import { ListCategorieComponent } from './list-categorie/list-categorie.componen
     AddCategorieComponent,
     UpdateCategoryComponent,
     ListCategorieComponent,
+    HomeComponent,
+    FooterAppComponent,
+    MentionsLegalesComponent,
+    FormContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, FontAwesomeModule],
   providers: [ProduitService],
   bootstrap: [AppComponent],
 })
