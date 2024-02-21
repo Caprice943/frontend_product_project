@@ -17,7 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterAppComponent } from './footer-app/footer-app.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
-import { FormContactComponent } from './form-contact/form-contact.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { FormContactComponent } from './form-contact/form-contact.component';
     HomeComponent,
     FooterAppComponent,
     MentionsLegalesComponent,
-    FormContactComponent,
+    LoginComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, FontAwesomeModule],
   providers: [ProduitService],
