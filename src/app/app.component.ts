@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
@@ -9,7 +10,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   //shouldDisplaySearch: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public authService: AuthService) {
    
   }
 }

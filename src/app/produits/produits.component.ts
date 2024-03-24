@@ -1,6 +1,8 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Produit } from '../model/produit.model';
 import { ProduitService } from '../services/produit.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produits',
@@ -9,7 +11,7 @@ import { ProduitService } from '../services/produit.service';
 })
 export class ProduitsComponent implements OnInit {
   produits: Produit[] | undefined; //un tableau de Produit
-  constructor(private produitService: ProduitService) {}
+  constructor(private produitService: ProduitService, public authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.chargerProduits();

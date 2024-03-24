@@ -1,38 +1,43 @@
-<h4>Catégories existantes</h4>
-<br />
-<div class="card shadow mb-4">
-  <div class="card-body">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th hidden>Id</th>
-          <th>Nom Catégorie</th>
-          <th>Description Catégorie</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let cat of categories">
-        <tr>
-          <td hidden>{{ cat.idCat }}</td>
-          <td>{{ cat.nomCat }}</td>
-          <td>{{ cat.descriptionCat }}</td>
+<div class="container">
+  <div>
+    <h4>Catégories existantes</h4>
+  </div>
+  <br />
 
-          <td>
-            <a
-              class="btn btn-outline-success"
-              [routerLink]="['/updateCategory', cat.idCat]"
-              >Modifier 🔄</a
-            >
-          </td>
-          <td>
-            <a
-              class="btn btn-outline-danger"
-              (click)="supprimerCategorie(cat)"
-              >Supprimer 🗑️</a
-            >
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th hidden>Id</th>
+            <th>Nom Catégorie</th>
+            <th>Description Catégorie</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let cat of categories">
+          <tr>
+            <td hidden>{{ cat.idCat }}</td>
+            <td>{{ cat.nomCat }}</td>
+            <td>{{ cat.descriptionCat }}</td>
+
+            <td>
+              <a *ngIf="authService.isAdmin()"
+                class="btn btn-outline-success"
+                [routerLink]="['/updateCategory', cat.idCat]"
+                >Modifier 🔄</a
+              >
+            </td>
+            <td>
+              <a *ngIf="authService.isAdmin()"
+                class="btn btn-outline-danger"
+                (click)="supprimerCategorie(cat)"
+                >Supprimer 🗑️</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

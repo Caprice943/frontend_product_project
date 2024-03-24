@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Categorie } from '../model/categorie.model';
 import { CategorieService } from '../services/categorie.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-list-categorie',
@@ -13,7 +14,7 @@ export class ListCategorieComponent implements OnInit {
 
   constructor(
     private categorieService: CategorieService,
-    private router: Router
+    private router: Router, public authService: AuthService
   ) {}
 
   ngOnInit(): void {

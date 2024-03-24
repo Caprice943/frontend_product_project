@@ -2,28 +2,40 @@
   <div>
     <h4>Liste des produits</h4>
   </div>
-  <br/>
- 
+  <br />
+
   <div class="card shadow mb-4">
     <div class="card-body">
       <table class="table table-striped">
-        <tr> <th hidden>Id</th><th>Nom</th> <th>Prix</th> <th>Date Création</th><th>Catégorie</th><th></th><th></th> </tr>
+        <tr>
+          <th hidden>Id</th>
+          <th>Nom</th>
+          <th>Prix</th>
+          <th>Date Création</th>
+          <th>Catégorie</th>
+          <th></th>
+          <th></th>
+        </tr>
         <tbody *ngFor="let produit of produits">
           <tr>
             <td hidden>{{ produit.idProduit }}</td>
             <td>{{ produit.nomProduit }}</td>
             <td>{{ produit.prixProduit }} &euro;</td>
-            <td>{{ produit.dateCreation | date: "dd/MM/yyyy" }}</td>
-            <td>{{produit.categorie.nomCat}}</td>
+            <td>{{ produit.dateCreation | date : "dd/MM/yyyy" }}</td>
+            <td>{{ produit.categorie.nomCat }}</td>
             <td>
               <a
+                *ngIf="authService.isAdmin()"
                 class="btn btn-outline-success"
                 [routerLink]="['/updateProduit', produit.idProduit]"
                 >Modifier 🔄</a
               >
             </td>
             <td>
-              <a class="btn btn-outline-danger" (click)="supprimerProduit(produit)"
+              <a
+                *ngIf="authService.isAdmin()"
+                class="btn btn-outline-danger"
+                (click)="supprimerProduit(produit)"
                 >Supprimer 🗑️</a
               >
             </td>
